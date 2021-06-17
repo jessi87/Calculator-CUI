@@ -13,6 +13,7 @@ fun main(){
             }
             "+" -> calculator.inputPlus()
             "-" -> calculator.inputMinus()
+            "*" -> calculator.inputMultiply()
             "=" -> println(calculator.getResult())
         }
     }while (input != "=")
@@ -30,6 +31,9 @@ class Calculator {
     }
     fun inputMinus(){
         expression+="-"
+    }
+    fun inputMultiply(){
+        expression+="*"
     }
     fun getResult(): Int = engine.eval(expression) as Int  //return 생략 , eval함수 : 연산을 대신해주는 함수
 
